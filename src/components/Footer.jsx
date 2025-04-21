@@ -51,15 +51,15 @@ const Footer = () => {
       </div>
 
       <div className="center-container">
-        {/* Footer columns container */}
+        {/* Footer columns container - adjusted column widths */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+          gridTemplateColumns: isMobile ? '1fr' : '2fr 1fr 1.5fr',
           gap: '2.5rem',
           marginBottom: '3rem',
         }}>
-          {/* Column 1: About */}
-          <div>
+          {/* Column 1: About - Wider column */}
+          <div style={{ paddingRight: '2rem' }}>
             <h3 style={{
               fontSize: '1.5rem',
               fontWeight: 'bold',
@@ -68,7 +68,7 @@ const Footer = () => {
               Проект Магарешко Мляко
             </h3>
             <p style={{ color: '#9CA3AF', marginBottom: '1.5rem' }}>
-              Опознайте ползите на магарешкото мляко чрез нашия проект, посветен на тази уникална суперхрана.
+              Опознайте ползите на магарешкото мляко чрез нашия проект, посветен на тази уникална суперхрана с множество полезни свойства за здравето. Нашата мисия е да проучим и популяризираме полезните ефекти на магарешкото мляко и да направим тези предимства достъпни за всички.
             </p>
             <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
               {/* Social Media Icons */}
@@ -90,15 +90,15 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Column 2: Quick Links */}
-          <div>
+          {/* Column 2: Quick Links - Narrower column */}
+          <div style={{ paddingRight: '1rem' }}>
             <h4 style={{ 
               fontSize: '1.125rem', 
               fontWeight: '600', 
               marginBottom: '1.5rem', 
               color: '#D1D5DB',
             }}>
-              Бързи връзки
+              Навигация
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li>
@@ -171,10 +171,38 @@ const Footer = () => {
                   Контакти
                 </a>
               </li>
+              <li>
+                <a 
+                  href="/faq" 
+                  style={{ 
+                    color: '#D1D5DB', 
+                    textDecoration: 'none', 
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#3B82F6'}
+                  onMouseOut={(e) => e.target.style.color = '#D1D5DB'}
+                >
+                  Често задавани въпроси
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/blog" 
+                  style={{ 
+                    color: '#D1D5DB', 
+                    textDecoration: 'none', 
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#3B82F6'}
+                  onMouseOut={(e) => e.target.style.color = '#D1D5DB'}
+                >
+                  Блог
+                </a>
+              </li>
             </ul>
           </div>
           
-          {/* Column 3: Legal Information */}
+          {/* Column 3: Legal Information - Medium width column */}
           <div>
             <h4 style={{ 
               fontSize: '1.125rem', 
@@ -225,6 +253,48 @@ const Footer = () => {
                   onMouseOut={(e) => e.target.style.color = '#D1D5DB'}
                 >
                   Политика за бисквитките
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/gdpr" 
+                  style={{ 
+                    color: '#D1D5DB', 
+                    textDecoration: 'none', 
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#3B82F6'}
+                  onMouseOut={(e) => e.target.style.color = '#D1D5DB'}
+                >
+                  GDPR съответствие
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/accessibility" 
+                  style={{ 
+                    color: '#D1D5DB', 
+                    textDecoration: 'none', 
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#3B82F6'}
+                  onMouseOut={(e) => e.target.style.color = '#D1D5DB'}
+                >
+                  Достъпност
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/sitemap" 
+                  style={{ 
+                    color: '#D1D5DB', 
+                    textDecoration: 'none', 
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#3B82F6'}
+                  onMouseOut={(e) => e.target.style.color = '#D1D5DB'}
+                >
+                  Карта на сайта
                 </a>
               </li>
             </ul>
