@@ -1,0 +1,7 @@
+This folder will contain the following images:
+- donkey-milk.jpg (For HeroSection)
+- about-project.jpg (For AboutSection)
+- eu-logo.png (For PartnersSection and Footer)
+- partner1-logo.png, partner2-logo.png, partner3-logo.png, partner4-logo.png (For PartnersSection)
+
+Please add appropriate images for your project here.
