@@ -11,6 +11,10 @@ body {
   color: #333;
   background-color: #fff;
   overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,6 +38,7 @@ img {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+  align-items: center;
 }
 
 .main-container {
@@ -41,6 +46,7 @@ img {
   display: flex;
   justify-content: center;
   flex: 1;
+  align-items: center;
 }
 
 main {
@@ -63,22 +69,27 @@ section#home {
   padding-top: 80px; /* To account for the fixed header */
   min-height: 100vh;
   background-color: #f8f9fa;
+  width: 100%;
 }
 
 section#about {
   background-color: #ffffff;
+  width: 100%;
 }
 
 section#benefits {
   background-color: #f8f9fa;
+  width: 100%;
 }
 
 section#partners {
   background-color: #ffffff;
+  width: 100%;
 }
 
 section#contact {
   background-color: #f8f9fa;
+  width: 100%;
 }
 
 .section-container {
@@ -87,6 +98,9 @@ section#contact {
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Utility classes */

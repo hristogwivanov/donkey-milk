@@ -14,6 +14,10 @@
 
 .about-content-wrapper {
   width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-content-wrapper h2 {
@@ -40,10 +44,12 @@
   flex-direction: row;
   align-items: center;
   gap: 3rem;
+  width: 100%;
 }
 
 .about-text {
   flex: 1;
+  padding: 0 1rem;
 }
 
 .about-text p {
@@ -58,6 +64,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  padding: 0 1rem;
 }
 
 .about-image img {
@@ -76,10 +83,16 @@
   .about-image {
     margin-bottom: 2rem;
     text-align: center;
+    padding: 0;
   }
   
   .about-image img {
     max-width: 100%;
+  }
+  
+  .about-text {
+    text-align: center;
+    padding: 0;
   }
   
   .about-text p {
