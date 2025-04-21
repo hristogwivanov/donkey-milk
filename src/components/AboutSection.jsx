@@ -5,12 +5,12 @@ const AboutSection = () => {
   return (
     <div className="about-content-wrapper">
       <div className="text-center mb-8">
-        <h2 className="section-title">За нас</h2>
+        <h2 className="section-title">За нашия проект</h2>
       </div>
       <div className="about-content">
         <div className="about-text">
           <p>
-            МАГАРЕШКО МЛЯКО ДЗЗД е посветено на изследването, производството и популяризирането на 
+            Проектът „Иновативни продукти, плод от забравени традиции“ е насочен към изследването, производството и популяризирането на 
             магарешкото мляко като устойчива и хранителна алтернатива на традиционните млечни продукти. 
             С богата история, датираща от хиляди години, магарешкото мляко е признато заради своя 
             изключителен хранителен профил и терапевтични свойства.
@@ -25,7 +25,7 @@ const AboutSection = () => {
         </div>
         <div className="about-image">
           {/* Replace with actual project image */}
-          <img src="/images/about-project.jpg" alt="МАГАРЕШКО МЛЯКО ДЗЗД" />
+          <img src="/images/about-us.png" alt="Нашият проект за магарешко мляко" />
         </div>
       </div>
     </div>

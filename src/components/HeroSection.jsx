@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import './HeroSection.css';
 
 const HeroSection = () => {
   const revealRef = useRef(null);
@@ -7,7 +8,7 @@ const HeroSection = () => {
   const handleMouseEnter = (e) => {
     setIsHovered(true);
     e.target.style.transform = 'translateY(-2px)';
-    e.target.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.4)';
+    e.target.style.boxShadow = '0 6px 20px rgba(117, 170, 58, 0.4)';
     
     if (revealRef.current) {
       revealRef.current.style.transform = 'translateX(100%)';
@@ -18,7 +19,7 @@ const HeroSection = () => {
   const handleMouseLeave = (e) => {
     setIsHovered(false);
     e.target.style.transform = 'translateY(0)';
-    e.target.style.boxShadow = '0 4px 14px rgba(59, 130, 246, 0.3)';
+    e.target.style.boxShadow = '0 4px 14px rgba(117, 170, 58, 0.3)';
     
     if (revealRef.current) {
       revealRef.current.style.transform = 'translateX(-100%)';
@@ -35,23 +36,23 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8">
-      <div className="w-full md:w-1/2 max-w-2xl">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">МАГАРЕШКО МЛЯКО ДЗЗД</h1>
-        <p className="text-xl mb-8 text-gray-600 leading-relaxed">
+    <div className="hero-container">
+      <div className="hero-content-wrapper">
+        <h1 className="">Проект Магарешко Мляко</h1>
+        <p className="">
           Открийте хранителните и здравословни ползи на този забележителен природен дар
         </p>
         
         {/* Enhanced button with more modern styling */}
         <button 
           style={{
-            background: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
+            backgroundColor: '#75AA3A',
             color: 'white',
             fontSize: '1.125rem',
             fontWeight: 600,
             padding: '0.875rem 2rem',
             borderRadius: '0.5rem',
-            boxShadow: '0 4px 14px rgba(59, 130, 246, 0.3)',
+            boxShadow: '0 4px 14px rgba(117, 170, 58, 0.3)',
             transition: 'all 0.3s ease',
             cursor: 'pointer',
             border: 'none',
@@ -108,14 +109,12 @@ const HeroSection = () => {
           />
         </button>
       </div>
-      <div className="w-full md:w-1/2 max-w-2xl mt-8 md:mt-0">
         {/* Replace with actual donkey/milk image */}
         <img 
-          src="/images/donkey-milk.jpg" 
+          src="/images/milk-production.png" 
           alt="Производство на магарешко мляко" 
-          className="rounded-lg shadow-xl w-full h-auto object-cover"
+          className="hero-image"
         />
-      </div>
     </div>
   );
 };
