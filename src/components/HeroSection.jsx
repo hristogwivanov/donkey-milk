@@ -38,10 +38,12 @@ const HeroSection = () => {
   return (
     <div className="hero-container">
       <div className="hero-content-wrapper">
-        <h1 className="">Проект Магарешко Мляко</h1>
-        <p className="">
+        <h1 className="hero-title" style={{ fontSize: '2rem', textAlign: 'center' }}>Проект "Иновативни продукти, плод от забравени традиции"</h1>
+        <br />
+        <p className="hero-description">
           Открийте хранителните и здравословни ползи на този забележителен природен дар
         </p>
+        <br />
         
         {/* Enhanced button with more modern styling */}
         <button 

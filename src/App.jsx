@@ -6,6 +6,7 @@ import BenefitsSection from './components/BenefitsSection'
 import PartnersSection from './components/PartnersSection'
 import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
+import './App.css';
 
 // Font styles for consistent application
 const fontStyles = {

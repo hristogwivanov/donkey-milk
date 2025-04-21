@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #333;
   background-color: #fff;
   overflow-x: hidden;
@@ -51,63 +51,50 @@ img {
 
 main {
   width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 section {
   width: 100%;
-  padding: 5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 section#home {
-  background-color: #f8f9fa;
   width: 100%;
 }
 
 section#about {
-  background-color: #ffffff;
   width: 100%;
 }
 
 section#benefits {
-  background-color: #f8f9fa;
   width: 100%;
 }
 
 section#partners {
-  background-color: #ffffff;
   width: 100%;
 }
 
 section#contact {
-  background-color: #f8f9fa;
   width: 100%;
 }
 
 .section-container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Utility classes */
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
   text-align: center;
+}
+
+/* Offset anchor targets by 20px */
+section[id] {
+  scroll-margin-top: 20px;
 }
 
 /* Add smooth scrolling */

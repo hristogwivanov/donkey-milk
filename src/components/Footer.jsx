@@ -186,20 +186,6 @@ const Footer = () => {
                   Често задавани въпроси
                 </a>
               </li>
-              <li>
-                <a
-                  href="/blog"
-                  style={{
-                    color: '#D1D5DB',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s',
-                  }}
-                  onMouseOver={(e) => e.target.style.color = '#3B82F6'}
-                  onMouseOut={(e) => e.target.style.color = '#D1D5DB'}
-                >
-                  Блог
-                </a>
-              </li>
             </ul>
           </div>
 
