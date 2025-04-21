@@ -34,7 +34,7 @@ const Header = () => {
       fontWeight: 500, // Keep font weight constant to prevent width changes
       position: 'relative',
       padding: '0.25rem 0.5rem',
-      transition: 'color 0.3s ease', // Only animate color changes
+      transition: 'color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       display: 'inline-block',
       textShadow: isHovered ? '0 1px 2px rgba(59, 130, 246, 0.2)' : 'none',
       borderRadius: '4px',
@@ -78,7 +78,6 @@ const Header = () => {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        {/* Logo with no hover effects */}
         <div style={{ fontWeight: 'bold', fontSize: '1.75rem' }}>
           <a 
             href="#home" 
@@ -87,7 +86,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            Проект Магарешко Мляко
+            МАГАРЕШКО МЛЯКО ДЗЗД
           </a>
         </div>
 

@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  // Using hardcoded year 2024 instead of current year
+  const currentYear = 2024;
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
+
   // Handle responsive layout changes
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   return (
     <footer style={{
       width: '100%',
@@ -65,7 +66,7 @@ const Footer = () => {
               fontWeight: 'bold',
               marginBottom: '1.5rem',
             }}>
-              Проект Магарешко Мляко
+              МАГАРЕШКО МЛЯКО ДЗЗД
             </h3>
             <p style={{ color: '#9CA3AF', marginBottom: '1.5rem' }}>
               Опознайте ползите на магарешкото мляко чрез нашия проект, посветен на тази уникална суперхрана с множество полезни свойства за здравето. Нашата мисия е да проучим и популяризираме полезните ефекти на магарешкото мляко и да направим тези предимства достъпни за всички.
@@ -89,24 +90,24 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           {/* Column 2: Quick Links - Narrower column */}
           <div style={{ paddingRight: '1rem' }}>
-            <h4 style={{ 
-              fontSize: '1.125rem', 
-              fontWeight: '600', 
-              marginBottom: '1.5rem', 
+            <h4 style={{
+              fontSize: '1.125rem',
+              fontWeight: '600',
+              marginBottom: '1.5rem',
               color: '#D1D5DB',
             }}>
               Навигация
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li>
-                <a 
-                  href="#home" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="#home"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -116,11 +117,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#about" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="#about"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -130,11 +131,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#benefits" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="#benefits"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -144,11 +145,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#partners" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="#partners"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -158,11 +159,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#contact" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="#contact"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -172,11 +173,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/faq" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/faq"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -186,11 +187,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/blog" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/blog"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -201,24 +202,24 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           {/* Column 3: Legal Information - Medium width column */}
           <div>
-            <h4 style={{ 
-              fontSize: '1.125rem', 
-              fontWeight: '600', 
-              marginBottom: '1.5rem', 
+            <h4 style={{
+              fontSize: '1.125rem',
+              fontWeight: '600',
+              marginBottom: '1.5rem',
               color: '#D1D5DB',
             }}>
               Правна информация
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li>
-                <a 
-                  href="/privacy-policy" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/privacy-policy"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -228,11 +229,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/terms-of-service" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/terms-of-service"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -242,11 +243,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/cookie-policy" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/cookie-policy"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -256,11 +257,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/gdpr" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/gdpr"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -270,11 +271,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/accessibility" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/accessibility"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -284,11 +285,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/sitemap" 
-                  style={{ 
-                    color: '#D1D5DB', 
-                    textDecoration: 'none', 
+                <a
+                  href="/sitemap"
+                  style={{
+                    color: '#D1D5DB',
+                    textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseOver={(e) => e.target.style.color = '#3B82F6'}
@@ -300,35 +301,45 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         {/* EU Funding Box */}
         <div style={{
           backgroundColor: '#1F2937', // Slightly lighter dark blue-gray
           padding: '1.5rem',
           borderRadius: '0.5rem',
           display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
-          alignItems: 'center',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          minHeight: isMobile ? 'auto' : '8.5rem',
           marginBottom: '2.5rem',
         }}>
-          <img 
-            src="/images/eu-logo.png" 
-            alt="Европейски съюз" 
-            style={{
-              height: '4rem',
-              marginRight: '1rem',
-              marginBottom: isMobile ? '1rem' : 0,
-            }} 
-          />
-          <p style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: '1.5' }}>
-            Този проект е получил финансиране от програмата за научни изследвания и иновации
-            „Хоризонт Европа" на Европейския съюз по споразумение за отпускане на безвъзмездни
-            средства № XXXXXX. Съдържанието на този уебсайт отразява само възгледите на авторите.
-            Европейската комисия не носи отговорност за каквото и да е използване на информацията,
-            която се съдържа в него.
+          <p style={{ fontSize: '0.875rem', color: '#9CA3AF', lineHeight: '1.5', marginBottom: '1.5rem' }}>
+            Програма за развитие на селските райони за периода 2014- 2020 г.
+            по процедура чрез подбор на проектни предложения по подмярка 16.1. „Подкрепа за сформиране и функциониране на оперативни групи в рамките на ЕПИ“
+            по мярка 16 „Сътрудничество“ Проект № BG06RDNP001-16.003-0030
+
+
           </p>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.25rem', width: '100%', justifyContent: 'space-between', marginTop: 'auto' }}>
+            <img
+              src="/images/flag-eu.png"
+              alt="Европейски съюз"
+              style={{ display: 'block', background: '#fff', borderRadius: '8px', height: '96px', width: 'auto', maxWidth: '160px', objectFit: 'cover', boxShadow: '0 1px 6px rgba(0,0,0,0.06)' }}
+            />
+            <img
+              src="/images/flag-eip.png"
+              alt="EIP"
+              style={{ display: 'block', background: '#fff', borderRadius: '8px', height: '96px', width: 'auto', maxWidth: '160px', objectFit: 'cover', boxShadow: '0 1px 6px rgba(0,0,0,0.06)' }}
+            />
+            <img
+              src="/images/flag-dvr.png"
+              alt="DVR"
+              style={{ display: 'block', background: '#fff', borderRadius: '8px', height: '96px', width: 'auto', maxWidth: '160px', objectFit: 'cover', boxShadow: '0 1px 6px rgba(0,0,0,0.06)' }}
+            />
+          </div>
         </div>
-        
+
         {/* Copyright Section */}
         <div style={{
           textAlign: 'center',
@@ -336,7 +347,7 @@ const Footer = () => {
           borderTop: '1px solid #374151', // Lighter border for contrast
         }}>
           <p style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>
-            &copy; {currentYear} Проект Магарешко Мляко. Всички права запазени.
+            &copy; {currentYear} МАГАРЕШКО МЛЯКО ДЗЗД. Всички права запазени.
           </p>
         </div>
       </div>

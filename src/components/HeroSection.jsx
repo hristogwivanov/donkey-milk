@@ -37,7 +37,7 @@ const HeroSection = () => {
   return (
     <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8">
       <div className="w-full md:w-1/2 max-w-2xl">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Проект Магарешко Мляко</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">МАГАРЕШКО МЛЯКО ДЗЗД</h1>
         <p className="text-xl mb-8 text-gray-600 leading-relaxed">
           Открийте хранителните и здравословни ползи на този забележителен природен дар
         </p>
