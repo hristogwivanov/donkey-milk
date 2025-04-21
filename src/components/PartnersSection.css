@@ -14,17 +14,6 @@
   position: relative;
 }
 
-.partners-content-wrapper h2::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background-color: #3498db;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .funding-info {
   margin-bottom: 4rem;
   display: flex;

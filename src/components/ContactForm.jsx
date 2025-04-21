@@ -14,17 +14,18 @@ const ContactForm = () => {
     success: false,
     error: false
   });
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
+    setFormData(prevData => ({
+      ...prevData,
       [name]: value
     }));
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     setFormStatus({ submitting: true, success: false, error: false });
     
     try {
@@ -46,7 +47,9 @@ const ContactForm = () => {
 
   return (
     <div className="contact-content-wrapper">
-      <h2>Свържете се с нас</h2>
+      <div className="text-center mb-8">
+        <h2 className="section-title">Свържете се с нас</h2>
+      </div>
       <p>Имате въпроси относно нашия проект или продуктите от магарешко мляко? Свържете се с нас!</p>
       
       {formStatus.success && (
@@ -71,6 +74,8 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            placeholder="Вашето име"
+            disabled={formStatus.submitting}
           />
         </div>
         
@@ -83,6 +88,8 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            placeholder="вашия@имейл.com"
+            disabled={formStatus.submitting}
           />
         </div>
         
@@ -95,6 +102,8 @@ const ContactForm = () => {
             value={formData.subject}
             onChange={handleChange}
             required
+            placeholder="Тема на съобщението"
+            disabled={formStatus.submitting}
           />
         </div>
         
@@ -105,8 +114,10 @@ const ContactForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            rows="5"
             required
+            placeholder="Вашето съобщение"
+            rows="5"
+            disabled={formStatus.submitting}
           ></textarea>
         </div>
         

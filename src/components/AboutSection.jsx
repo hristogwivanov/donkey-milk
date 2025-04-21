@@ -4,7 +4,9 @@ import './AboutSection.css';
 const AboutSection = () => {
   return (
     <div className="about-content-wrapper">
-      <h2>За нашия проект</h2>
+      <div className="text-center mb-8">
+        <h2 className="section-title">За нашия проект</h2>
+      </div>
       <div className="about-content">
         <div className="about-text">
           <p>

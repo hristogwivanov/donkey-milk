@@ -1,5 +1,9 @@
+/* postcss-tailwind directives */
+/* stylelint-disable-next-line */
 @tailwind base;
+/* stylelint-disable-next-line */
 @tailwind components;
+/* stylelint-disable-next-line */
 @tailwind utilities;
 
 /* Global centering styles */
@@ -35,6 +39,14 @@ html, body {
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+/* Section title styling - clean with no underlines */
+section h2, .section-title {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
 }
 
 /* Navigation styling */

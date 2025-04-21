@@ -4,7 +4,9 @@ import './PartnersSection.css';
 const PartnersSection = () => {
   return (
     <div className="partners-content-wrapper">
-      <h2>Нашите партньори и финансиране</h2>
+      <div className="text-center mb-8">
+        <h2 className="section-title">Нашите партньори и финансиране</h2>
+      </div>
       
       <div className="funding-info">
         <div className="eu-funding">

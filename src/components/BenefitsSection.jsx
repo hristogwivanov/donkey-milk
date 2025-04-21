@@ -37,7 +37,9 @@ const BenefitsSection = () => {
 
   return (
     <div className="benefits-content-wrapper">
-      <h2>Ползи от магарешкото мляко</h2>
+      <div className="text-center mb-8">
+        <h2 className="section-title">Ползи от магарешкото мляко</h2>
+      </div>
       <p className="benefits-intro">
         Открийте защо магарешкото мляко се цени от хиляди години заради своите изключителни здравословни свойства:
       </p>
