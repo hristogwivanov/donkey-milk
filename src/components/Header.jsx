@@ -78,6 +78,7 @@ const Header = () => {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
+        {/* Logo */}
         <div style={{ fontWeight: 'bold', fontSize: '1.75rem' }}>
           <a 
             href="#home" 
@@ -90,15 +91,18 @@ const Header = () => {
           </a>
         </div>
 
+        {/* Flags moved to HeroSection */}
+
         {/* Desktop Navigation */}
-        <nav style={{ display: window.innerWidth >= 1024 ? 'block' : 'none' }}>
-          <ul style={{ 
-            display: 'flex', 
-            listStyle: 'none', 
-            margin: 0, 
-            padding: 0,
-            gap: '2.5rem'
-          }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <nav style={{ display: window.innerWidth >= 1024 ? 'block' : 'none' }}>
+            <ul style={{ 
+              display: 'flex', 
+              listStyle: 'none', 
+              margin: 0, 
+              padding: 0,
+              gap: '2.5rem'
+            }}>
             <li>
               <a 
                 href="#home" 
@@ -156,7 +160,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-
+        
         {/* Mobile menu button */}
         <button 
           onClick={toggleMobileMenu}
@@ -169,7 +173,8 @@ const Header = () => {
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
-            zIndex: 10
+            zIndex: 10,
+            marginLeft: '24px'
           }}
         >
           <span style={{
@@ -195,6 +200,7 @@ const Header = () => {
           }}></span>
         </button>
       </div>
+      </div>
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
@@ -211,6 +217,10 @@ const Header = () => {
           boxShadow: '-2px 0 10px rgba(0,0,0,0.1)'
         }}>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+            {/* Removed the text as requested */}
+            
+            {/* Flags moved to HeroSection */}
+
             <li style={{ margin: '1.5rem 0' }}>
               <a 
                 href="#home" 
@@ -350,7 +360,7 @@ const Header = () => {
         </div>
       )}
     </header>
-  );
+  )
 };
 
 export default Header;

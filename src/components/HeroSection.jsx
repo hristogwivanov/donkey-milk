@@ -43,6 +43,102 @@ const HeroSection = () => {
         <p className="hero-description">
           Открийте хранителните и здравословни ползи на този забележителен природен дар
         </p>
+        
+        {/* Desktop flags (hidden on mobile) */}
+        <div className="desktop-flags" style={{ 
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '32px',
+          margin: '2.5rem 0'
+        }}>
+          <img 
+            src="/images/flag-eu.png" 
+            alt="EU Flag" 
+            style={{ 
+              height: '100px', 
+              width: 'auto', 
+              objectFit: 'contain' 
+            }} 
+            className="flag"
+          />
+          <img 
+            src="/images/flag-bg.png" 
+            alt="Bulgaria Flag" 
+            style={{ 
+              height: '100px', 
+              width: 'auto',
+              objectFit: 'contain',
+              border: '1px solid #ccc',
+              boxShadow: '0 0 5px rgba(0,0,0,0.1)'
+            }} 
+            className="flag"
+          />
+          <img 
+            src="/images/flag-dvr.png" 
+            alt="DVR Flag" 
+            style={{ 
+              height: '100px', 
+              width: 'auto', 
+              objectFit: 'contain' 
+            }} 
+            className="flag"
+          />
+        </div>
+
+        {/* Mobile flags (hidden on desktop) */}
+        <div className="mobile-flags" style={{ 
+          margin: '2.5rem 0',
+          display: 'none' // Hidden by default, shown via media query
+        }}>
+          {/* Top row with EU and BG flags */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '20px',
+            marginBottom: '15px'
+          }}>
+            <img 
+              src="/images/flag-eu.png" 
+              alt="EU Flag" 
+              style={{ 
+                height: '75px', 
+                width: 'auto', 
+                objectFit: 'contain' 
+              }} 
+              className="flag"
+            />
+            <img 
+              src="/images/flag-bg.png" 
+              alt="Bulgaria Flag" 
+              style={{ 
+                height: '75px', 
+                width: 'auto',
+                objectFit: 'contain',
+                border: '1px solid #ccc',
+                boxShadow: '0 0 5px rgba(0,0,0,0.1)'
+              }} 
+              className="flag"
+            />
+          </div>
+          
+          {/* Bottom row with just DVR flag */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center'
+          }}>
+            <img 
+              src="/images/flag-dvr.png" 
+              alt="DVR Flag" 
+              style={{ 
+                height: '75px', 
+                width: 'auto', 
+                objectFit: 'contain' 
+              }} 
+              className="flag"
+            />
+          </div>
+        </div>
         <br />
         
         {/* Enhanced button with more modern styling */}
