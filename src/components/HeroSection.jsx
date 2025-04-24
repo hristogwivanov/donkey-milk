@@ -38,7 +38,7 @@ const HeroSection = () => {
   return (
     <div className="hero-container">
       <div className="hero-content-wrapper">
-        <h1 className="hero-title" style={{ fontSize: '2rem', textAlign: 'center' }}>Проект "Иновативни продукти, плод от забравени традиции"</h1>
+        <h1 className="hero-title" style={{ fontSize: '2rem', textAlign: 'left' }}>Проект "Иновативни продукти, плод от забравени традиции"</h1>
         <br />
         <p className="hero-description">
           Открийте хранителните и здравословни ползи на този забележителен природен дар
