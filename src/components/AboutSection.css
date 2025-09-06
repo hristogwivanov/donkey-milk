@@ -30,7 +30,7 @@
 
 .about-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 3rem;
   width: 100%;

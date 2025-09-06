@@ -80,20 +80,64 @@
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-top: 80px;
+  }
+
   .hero-content-wrapper {
     flex-direction: column;
+    padding: 1rem 0;
   }
   
   .hero-content {
     max-width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
     padding: 0;
+  }
+
+  .hero-title {
+    font-size: 1.5rem !important;
+    text-align: center !important;
   }
   
   .hero-image {
     margin-left: 0;
     max-width: 100%;
     padding: 0;
+  }
+}
+
+/* Desktop and mobile flag layout control */
+.desktop-flags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobile-flags {
+  display: none; /* Hidden by default */
+}
+
+/* Flag styles (shared between layouts) */
+.flag {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Mobile layout controls */
+@media (max-width: 576px) {
+  /* Hide desktop flags on mobile */
+  .desktop-flags {
+    display: none !important;
+  }
+  
+  /* Show mobile flags on mobile */
+  .mobile-flags {
+    display: block !important;
   }
 }
