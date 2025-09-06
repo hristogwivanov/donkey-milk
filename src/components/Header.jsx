@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,20 @@ const Header = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const handleNavClick = (sectionId) => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home page and store section to scroll to
+      sessionStorage.setItem('scrollToSection', sectionId);
+      window.location.href = '/';
+    } else {
+      // If on home page, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   // Improved link style that doesn't cause layout shifts
   const getLinkStyle = (index) => {
     const isHovered = hoveredLink === index;
@@ -31,7 +47,7 @@ const Header = () => {
       color: isHovered ? '#3B82F6' : '#1a202c',
       textDecoration: 'none',
       fontSize: '1.1rem',
-      fontWeight: 500, // Keep font weight constant to prevent width changes
+      fontWeight: 600, // Keep font weight constant to prevent width changes
       position: 'relative',
       padding: '0.25rem 0.5rem',
       transition: 'color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
@@ -79,15 +95,15 @@ const Header = () => {
         alignItems: 'center'
       }}>
         <div style={{ fontWeight: 'bold', fontSize: '1.75rem' }}>
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             style={{ 
               color: '#1a202c', 
               textDecoration: 'none',
             }}
           >
             МАГАРЕШКО МЛЯКО ДЗЗД
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -100,59 +116,70 @@ const Header = () => {
             gap: '2.5rem'
           }}>
             <li>
-              <a 
-                href="#home" 
-                style={getLinkStyle(0)}
+              <button 
+                onClick={() => handleNavClick('home')}
+                style={{...getLinkStyle(0), background: 'none', border: 'none', cursor: 'pointer'}}
                 onMouseEnter={() => setHoveredLink(0)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
                 Начало
                 <div style={getUnderlineStyle(0)}></div>
-              </a>
+              </button>
             </li>
             <li>
-              <a 
-                href="#about" 
+              <Link 
+                to="/news" 
                 style={getLinkStyle(1)}
                 onMouseEnter={() => setHoveredLink(1)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                За нас
+                Новини
                 <div style={getUnderlineStyle(1)}></div>
-              </a>
+              </Link>
             </li>
             <li>
-              <a 
-                href="#benefits" 
-                style={getLinkStyle(2)}
+              <button 
+                onClick={() => handleNavClick('about')}
+                style={{...getLinkStyle(2), background: 'none', border: 'none', cursor: 'pointer'}}
                 onMouseEnter={() => setHoveredLink(2)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                Ползи
+                За нас
                 <div style={getUnderlineStyle(2)}></div>
-              </a>
+              </button>
             </li>
             <li>
-              <a 
-                href="#partners" 
-                style={getLinkStyle(3)}
+              <button 
+                onClick={() => handleNavClick('benefits')}
+                style={{...getLinkStyle(3), background: 'none', border: 'none', cursor: 'pointer'}}
                 onMouseEnter={() => setHoveredLink(3)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                Партньори
+                Ползи
                 <div style={getUnderlineStyle(3)}></div>
-              </a>
+              </button>
             </li>
             <li>
-              <a 
-                href="#contact" 
-                style={getLinkStyle(4)}
+              <button 
+                onClick={() => handleNavClick('partners')}
+                style={{...getLinkStyle(4), background: 'none', border: 'none', cursor: 'pointer'}}
                 onMouseEnter={() => setHoveredLink(4)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                Контакти
+                Партньори
                 <div style={getUnderlineStyle(4)}></div>
-              </a>
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => handleNavClick('contact')}
+                style={{...getLinkStyle(5), background: 'none', border: 'none', cursor: 'pointer'}}
+                onMouseEnter={() => setHoveredLink(5)}
+                onMouseLeave={() => setHoveredLink(null)}
+              >
+                Контакти
+                <div style={getUnderlineStyle(5)}></div>
+              </button>
             </li>
           </ul>
         </nav>
@@ -212,9 +239,11 @@ const Header = () => {
         }}>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ margin: '1.5rem 0' }}>
-              <a 
-                href="#home" 
-                onClick={() => setMobileMenuOpen(false)}
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('home');
+                }}
                 style={{
                   color: '#1a202c',
                   textDecoration: 'none',
@@ -224,7 +253,12 @@ const Header = () => {
                   padding: '0.5rem 0',
                   position: 'relative',
                   overflow: 'hidden',
-                  transition: 'color 0.3s ease' // Only transition color, not layout properties
+                  transition: 'color 0.3s ease',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.color = '#3B82F6';
@@ -236,11 +270,11 @@ const Header = () => {
                 }}
               >
                 Начало
-              </a>
+              </button>
             </li>
             <li style={{ margin: '1.5rem 0' }}>
-              <a 
-                href="#about" 
+              <Link 
+                to="/news" 
                 onClick={() => setMobileMenuOpen(false)}
                 style={{
                   color: '#1a202c',
@@ -252,6 +286,40 @@ const Header = () => {
                   position: 'relative',
                   overflow: 'hidden',
                   transition: 'color 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = '#3B82F6';
+                  e.target.style.paddingLeft = '10px';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = '#1a202c';
+                  e.target.style.paddingLeft = '0';
+                }}
+              >
+                Новини
+              </Link>
+            </li>
+            <li style={{ margin: '1.5rem 0' }}>
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('about');
+                }}
+                style={{
+                  color: '#1a202c',
+                  textDecoration: 'none',
+                  fontSize: '1.25rem',
+                  fontWeight: 500,
+                  display: 'block',
+                  padding: '0.5rem 0',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'color 0.3s ease',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.color = '#3B82F6';
@@ -263,12 +331,14 @@ const Header = () => {
                 }}
               >
                 За нас
-              </a>
+              </button>
             </li>
             <li style={{ margin: '1.5rem 0' }}>
-              <a 
-                href="#benefits" 
-                onClick={() => setMobileMenuOpen(false)}
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('benefits');
+                }}
                 style={{
                   color: '#1a202c',
                   textDecoration: 'none',
@@ -278,7 +348,12 @@ const Header = () => {
                   padding: '0.5rem 0',
                   position: 'relative',
                   overflow: 'hidden',
-                  transition: 'color 0.3s ease'
+                  transition: 'color 0.3s ease',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.color = '#3B82F6';
@@ -290,12 +365,14 @@ const Header = () => {
                 }}
               >
                 Ползи
-              </a>
+              </button>
             </li>
             <li style={{ margin: '1.5rem 0' }}>
-              <a 
-                href="#partners" 
-                onClick={() => setMobileMenuOpen(false)}
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('partners');
+                }}
                 style={{
                   color: '#1a202c',
                   textDecoration: 'none',
@@ -305,7 +382,12 @@ const Header = () => {
                   padding: '0.5rem 0',
                   position: 'relative',
                   overflow: 'hidden',
-                  transition: 'color 0.3s ease'
+                  transition: 'color 0.3s ease',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.color = '#3B82F6';
@@ -317,12 +399,14 @@ const Header = () => {
                 }}
               >
                 Партньори
-              </a>
+              </button>
             </li>
             <li style={{ margin: '1.5rem 0' }}>
-              <a 
-                href="#contact" 
-                onClick={() => setMobileMenuOpen(false)}
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNavClick('contact');
+                }}
                 style={{
                   color: '#1a202c',
                   textDecoration: 'none',
@@ -332,7 +416,12 @@ const Header = () => {
                   padding: '0.5rem 0',
                   position: 'relative',
                   overflow: 'hidden',
-                  transition: 'color 0.3s ease'
+                  transition: 'color 0.3s ease',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.color = '#3B82F6';
@@ -344,7 +433,7 @@ const Header = () => {
                 }}
               >
                 Контакти
-              </a>
+              </button>
             </li>
           </ul>
         </div>

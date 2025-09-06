@@ -40,9 +40,11 @@ const HeroSection = () => {
       <div className="hero-content-wrapper">
         <h1 className="hero-title" style={{ fontSize: '2rem', textAlign: 'center' }}>Проект "Иновативни продукти, плод от забравени традиции"</h1>
         <br />
+        <br />
         <p className="hero-description">
           Открийте хранителните и здравословни ползи на този забележителен природен дар
         </p>
+        <br />
         <br />
         
         {/* Enhanced button with more modern styling */}

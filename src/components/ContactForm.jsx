@@ -1,50 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ContactForm.css';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  
-  const [formStatus, setFormStatus] = useState({
-    submitting: false,
-    success: false,
-    error: false
-  });
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    setFormStatus({ submitting: true, success: false, error: false });
-    
-    try {
-      // This will be connected to Formspree later
-      // Placeholder for future implementation
-      console.log('Form submitted:', formData);
-      
-      // Simulate successful submission for now
-      setTimeout(() => {
-        setFormStatus({ submitting: false, success: true, error: false });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      }, 1000);
-      
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setFormStatus({ submitting: false, success: false, error: true });
-    }
-  };
-
   return (
     <div className="contact-content-wrapper">
       <div className="text-center mb-8">
@@ -52,83 +9,43 @@ const ContactForm = () => {
       </div>
       <p>Имате въпроси относно нашия проект или продуктите от магарешко мляко? Свържете се с нас!</p>
       
-      {formStatus.success && (
-        <div className="form-success-message">
-          Благодарим за съобщението! Ще се свържем с вас скоро.
+      <div className="contact-info">
+        <div className="contact-item">
+          <div className="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <div className="contact-details">
+            <h3>Имейл</h3>
+            <a href="mailto:gerganastoeva54@gmail.com">gerganastoeva54@gmail.com</a>
+          </div>
         </div>
-      )}
-      
-      {formStatus.error && (
-        <div className="form-error-message">
-          Възникна грешка при изпращането на съобщението. Моля, опитайте отново по-късно.
+
+        <div className="contact-item">
+          <div className="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </div>
+          <div className="contact-details">
+            <h3>Телефон</h3>
+            <a href="tel:+359882525227">+359 88 25 25 227</a>
+          </div>
         </div>
-      )}
-      
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Име</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Вашето име"
-            disabled={formStatus.submitting}
-          />
+
+        <div className="contact-item">
+          <div className="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+            </svg>
+          </div>
+          <div className="contact-details">
+            <h3>Facebook</h3>
+            <a href="https://www.facebook.com/people/Donkey-Milk/100086418891295/" target="_blank" rel="noopener noreferrer">Donkey Milk</a>
+          </div>
         </div>
-        
-        <div className="form-group">
-          <label htmlFor="email">Имейл</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="вашия@имейл.com"
-            disabled={formStatus.submitting}
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="subject">Тема</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            placeholder="Тема на съобщението"
-            disabled={formStatus.submitting}
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="message">Съобщение</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            placeholder="Вашето съобщение"
-            rows="5"
-            disabled={formStatus.submitting}
-          ></textarea>
-        </div>
-        
-        <button 
-          type="submit" 
-          className="submit-button"
-          disabled={formStatus.submitting}
-        >
-          {formStatus.submitting ? 'Изпращане...' : 'Изпрати съобщение'}
-        </button>
-      </form>
+      </div>
     </div>
   );
 };
