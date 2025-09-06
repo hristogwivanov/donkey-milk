@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +39,14 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+  };
+
+  const handleNewsClick = () => {
+    navigate('/news');
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   // Improved link style that doesn't cause layout shifts
@@ -131,15 +140,15 @@ const Header = () => {
               </button>
             </li>
             <li>
-              <Link 
-                to="/news" 
-                style={getLinkStyle(1)}
+              <button 
+                onClick={handleNewsClick}
+                style={{...getLinkStyle(1), background: 'none', border: 'none', cursor: 'pointer'}}
                 onMouseEnter={() => setHoveredLink(1)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
                 Новини
                 <div style={getUnderlineStyle(1)}></div>
-              </Link>
+              </button>
             </li>
             <li>
               <button 
@@ -283,9 +292,11 @@ const Header = () => {
               </button>
             </li>
             <li style={{ margin: '1.5rem 0' }}>
-              <Link 
-                to="/news" 
-                onClick={() => setMobileMenuOpen(false)}
+              <button 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleNewsClick();
+                }}
                 style={{
                   color: '#1a202c',
                   textDecoration: 'none',
@@ -295,7 +306,12 @@ const Header = () => {
                   padding: '0.5rem 0',
                   position: 'relative',
                   overflow: 'hidden',
-                  transition: 'color 0.3s ease'
+                  transition: 'color 0.3s ease',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.color = '#3B82F6';
@@ -307,7 +323,7 @@ const Header = () => {
                 }}
               >
                 Новини
-              </Link>
+              </button>
             </li>
             <li style={{ margin: '1.5rem 0' }}>
               <button 
