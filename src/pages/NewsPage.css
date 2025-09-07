@@ -162,6 +162,27 @@
   transform: scale(1.05);
 }
 
+/* First news image specific styling */
+.first-news-image {
+  height: 500px !important;
+}
+
+/* Second news image specific styling - shift content up to hide bottom strip */
+.second-news-image {
+  transform: scale(1.01);
+}
+
+/* Third news image specific styling - use contain instead of cover */
+.third-news-image {
+  object-fit: contain !important;
+  height: 350px !important;
+}
+
+/* Fourth news image specific styling - scale up */
+.fourth-news-image {
+  transform: scale(1.5);
+}
+
 /* Text content */
 .news-text-content {
   display: block;
